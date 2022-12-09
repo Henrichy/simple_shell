@@ -46,6 +46,7 @@ int unset_alias(info_t *info, char *str)
 int set_alias(info_t *info, char *str)
 {
 	char *p;
+
 	p = _strchr(str, '=');
 	if (!p)
 		return (1);
@@ -89,6 +90,7 @@ int _myalias(info_t *info)
 {
 	int i = 0;
 	char *p = NULL;
+
 	list_t *node = NULL;
 
 	if (info->argc == 1)
