@@ -95,9 +95,8 @@ typedef struct passinfo
 	int histcount;
 } info_t;
 
-#define NFO_INIT \
-
-{NULL, ULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+#define INFO_INIT \
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
 /**
@@ -110,6 +109,7 @@ typedef struct builtin
 	char *type;
 	int (*func)(info_t *);
 } builtin_table;
+
 
 /* toem_shloop.c */
 int hsh(info_t *, char **);
@@ -155,10 +155,10 @@ char **strtow2(char *, char);
 /* toem_realloc.c */
 char *_memset(char *, char, unsigned int);
 void ffree(char **);
-void *_realloc(void*, unsigned int, unsigned int);
+void *_realloc(void *, unsigned int, unsigned int);
 
 /* toem_memory.c */
-int bfree(void **)
+int bfree(void **);
 
 /* toem_atoi.c */
 int interactive(info_t *);
@@ -230,6 +230,6 @@ int is_chain(info_t *, char *, size_t *);
 void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
-int replace_string(char ** char *);
+int replace_string(char **, char *);
 
 #endif
